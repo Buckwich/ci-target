@@ -2,11 +2,14 @@ name: Reusable Workflow
 
 on:
   workflow_call:
-
+  workflow_dispatch:
 jobs:
   do-something:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - run: echo "Running workflow in Repo A after Repo B completed"
 
       - name: Generate fake file
