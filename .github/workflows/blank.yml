@@ -12,18 +12,20 @@ jobs:
 
       - run: echo "Running workflow in Repo A after Repo B completed"
 
-      - name: Generate fake file
-        run: |
-          mkdir -p test-folder
-          echo "This is a fake file to test the workflow" > test-folder/fake-file.txt
+      - run: gh repo ls
 
-      - name: Create PR
-        uses: peter-evans/create-pull-request@v4
-        with:
-          title: "TESTING Update Screenshots"
-          body: "This PR updates the screenshots in the documentation."
-          repository: Buckwich/ci-target
-          base: main
-          draft: true
-          branch: update-screenshots
-          commit-message: "Update screenshots"
+      # - name: Generate fake file
+      #   run: |
+      #     mkdir -p test-folder
+      #     echo "This is a fake file to test the workflow" > test-folder/fake-file.txt
+
+      # - name: Create PR
+      #   uses: peter-evans/create-pull-request@v4
+      #   with:
+      #     title: "TESTING Update Screenshots"
+      #     body: "This PR updates the screenshots in the documentation."
+      #     repository: Buckwich/ci-target
+      #     base: main
+      #     draft: true
+      #     branch: update-screenshots
+      #     commit-message: "Update screenshots"
