@@ -13,6 +13,8 @@ jobs:
       - run: echo "Running workflow in Repo A after Repo B completed"
 
       - run: gh repo ls
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       # - name: Generate fake file
       #   run: |
